@@ -63,6 +63,7 @@ def main(argv):
             with open(os.path.basename(inputdir), 'rb') as thefiles:
                 contents = thefiles.read()
 
+
             contents_encrypted = Fernet(key).encrypt(contents)
             with open(os.path.basename(inputdir), 'wb') as thefiles:
                 thefiles.write(contents_encrypted)
