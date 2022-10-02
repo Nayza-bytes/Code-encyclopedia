@@ -15,8 +15,8 @@ def hello():
 #And have a different message
 @app.route('/nayza')
 def hi():
-    return "Hi welcom coder"
+    return "Hi welcome coder"
 
-#Run the flask app on port 500 with debug
+#Run the flask app on port 5000 with debug
 if __name__ == '__main__':
-    app.run(port = 500, debug = True)
+    app.run(port = 5000, debug = True)
