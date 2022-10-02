@@ -22,10 +22,11 @@ title = """
                                                     
 """
 opt = """
-[1] Convert Fahrenheit to Celsius   | [5] Calculate Resistance
-[2] Convert Celsuis to Fahrenheit   | [6] Calculate Current
-[3] Euro to Dollar                  | [7] Calculate Voltage
+[1] Convert Fahrenheit to Celsius   | [6] Calculate Resistance
+[2] Convert Celsuis to Fahrenheit   | [7] Calculate Current
+[3] Euro to Dollar                  | [8] Calculate Voltage
 [4] Dollar to euro                  |
+[5] Euro To russian rubles          |
 """
 
 print(center(title))
@@ -60,6 +61,10 @@ def calcCurrent(R, E):
 def calcVoltage(I, R):
     Voltage = I*R
     print(f'Resistance : {Voltage} Ohm')
+
+def EurToRubles(euro):
+    rubles = euro * 72.5970
+    print(f'{euro} € to russian rubles {rubles}')
 #----Variables----#
 count = 0
 
@@ -78,10 +83,12 @@ if __name__ == '__main__':
                 case '4':
                     DolToEur(int(input('[!]=> Input Dollars : ')))
                 case '5':
-                    calcResistance(int(input('[!]=> Input Voltage : ')), int(input('[!]=> Input Currents : ')))
+                    EurToRubles(int(input('[!]=> Input euro : ')))
                 case '6':
-                    int(input('[!]=> Input Voltage : ')), int(input('[!]=> Input Resistance : '))
+                    calcResistance(int(input('[!]=> Input Voltage : ')), int(input('[!]=> Input Currents : ')))
                 case '7':
+                    int(input('[!]=> Input Voltage : ')), int(input('[!]=> Input Resistance : '))
+                case '8':
                     int(input('[!]=> Input Current : ')), int(input('[!]=> Input Resistance : '))
                 case 'quit':
                     break
