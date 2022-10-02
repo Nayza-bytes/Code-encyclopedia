@@ -22,8 +22,10 @@ title = """
                                                     
 """
 opt = """
-[1] Convert Fahrenheit to Celsius   |    [3] Euro to Dollar
-[2] Convert Celsuis to Fahrenheit   |    [4] Dollar to euro
+[1] Convert Fahrenheit to Celsius   | [5] Calculate Resistance
+[2] Convert Celsuis to Fahrenheit   | [6] Calculate Current
+[3] Euro to Dollar                  | [7] Calculate Voltage
+[4] Dollar to euro                  |
 """
 
 print(center(title))
@@ -46,6 +48,18 @@ def EurToDol(euro):
 def DolToEur(dollar):
     eur = dollar * 1.16
     print(f"[!] Around {eur} Euros")
+
+def calcResistance(I, E):
+    Resistance = E/I
+    print(f'Resistance : {Resistance} Ohm')
+
+def calcCurrent(R, E):
+    Current = E/R
+    print(f'Resistance : {Current} Ohm')
+
+def calcVoltage(I, R):
+    Voltage = I*R
+    print(f'Resistance : {Voltage} Ohm')
 #----Variables----#
 count = 0
 
@@ -63,6 +77,14 @@ if __name__ == '__main__':
                     EurToDol(int(input('[!]=> Input Euro : ')))
                 case '4':
                     DolToEur(int(input('[!]=> Input Dollars : ')))
+                case '5':
+                    calcResistance(int(input('[!]=> Input Voltage : ')), int(input('[!]=> Input Currents : ')))
+                case '6':
+                    int(input('[!]=> Input Voltage : ')), int(input('[!]=> Input Resistance : '))
+                case '7':
+                    int(input('[!]=> Input Current : ')), int(input('[!]=> Input Resistance : '))
+                case 'quit':
+                    break
                 case _:
                     print('[!]=> Oops an error as occured, please try again !')
                 
