@@ -12,8 +12,16 @@
         <section>
             <div class='wrapper'>
                 <h1 class='Title'>Project 1: URL shortener</h1>
-                <input type='text' class='name' name='Input Link'>
-                <a class='button'>Transform</a>
+                <form>
+                    <input type='url' 
+                           class='name' 
+                           name='nameh'
+                           placeholder='https://example.com'
+                           pattern='https://.*' size='70'
+                           required 
+                    >
+                    <input type='submit' value='Submit'>
+                </form>
             </div>
         </section>
     </body>
