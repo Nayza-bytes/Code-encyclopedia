@@ -4,4 +4,4 @@ A Python program that help you convert Fahrenheit, Celsuis, Dollars, Euro and mo
 More update will be availaible!
 Stay tune!
 
-This app is or will be updated in another repository so if you want the updated versions please check this repo : https://github.com/Nayza-bytes/Python-code
+This is here where the update would be, have fun messing around wwith my program :)
