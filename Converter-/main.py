@@ -8,6 +8,7 @@
 
 
 #----Modules----#
+import math
 from pycenter import center
 
 
@@ -22,15 +23,16 @@ title = """
                                                     
 """
 opt = """
-Temperature conversion              | Electrical Calculator
+Temperature conversion:             | Electrical Calculator:
 
 [1] Convert Fahrenheit to Celsius   | [6] Calculate Resistance
 [2] Convert Celsuis to Fahrenheit   | [7] Calculate Current
                                     | [8] Calculate Voltage
-Money Conversion
 
-[3] Euro to Dollar 
-[4] Dollar to euro                  
+Money Conversion:                   | Math related calculation:
+
+[3] Euro to Dollar                  | [9] Degree to radians [!]
+[4] Dollar to euro                  | [10] Radians to degree [!]Not working actually
 [5] Euro To russian rubles          
 """
 
@@ -70,6 +72,14 @@ def calcVoltage(I, R):
 def EurToRubles(euro):
     rubles = euro * 72.5970
     print(f'{euro} € to russian rubles {rubles}')
+
+def radToD(radians):
+    toRad = (radians* math.pi / 4)*(360 / 2 * math.pi)
+    print(f'radians to degree => {toRad}')
+
+def dToRad(degree):
+    toD = degree * math.pi / 180
+    print(f'degree to radians => {toD}')
 #----Variables----#
 count = 0
 
@@ -95,6 +105,10 @@ if __name__ == '__main__':
                     int(input('[!]=> Input Voltage : ')), int(input('[!]=> Input Resistance : '))
                 case '8':
                     int(input('[!]=> Input Current : ')), int(input('[!]=> Input Resistance : '))
+                case '9':
+                    dToRad(int(input('[!]=> Input your degree value : ')))
+                case '10':
+                    radToD(int(input('[!]=> Input your degree value : ')))
                 case 'quit':
                     break
                 case _:
