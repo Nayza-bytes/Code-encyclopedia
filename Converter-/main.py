@@ -22,11 +22,16 @@ title = """
                                                     
 """
 opt = """
+Temperature conversion              | Electrical Calculator
+
 [1] Convert Fahrenheit to Celsius   | [6] Calculate Resistance
 [2] Convert Celsuis to Fahrenheit   | [7] Calculate Current
-[3] Euro to Dollar                  | [8] Calculate Voltage
-[4] Dollar to euro                  |
-[5] Euro To russian rubles          |
+                                    | [8] Calculate Voltage
+Money Conversion
+
+[3] Euro to Dollar 
+[4] Dollar to euro                  
+[5] Euro To russian rubles          
 """
 
 print(center(title))
