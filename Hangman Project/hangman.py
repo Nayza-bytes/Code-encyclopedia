@@ -3,30 +3,44 @@ import random
 import os
 
 
+#Function for the core game 
+def core():
 
-word_list = ['short', 'banana', 'mango', 'car', 'hamburger', 'adventure', 'bank']
-word_chosen = random.choice(word_list)
-essai = 9
-word_found = False
-letters = []
-nb_letters = 0
+    #Setup for the game
 
-print(f'Welcome {os.name}, plateform : {platform.system()}, version : {platform.release()}')
-print(f'The word have {len(word_chosen)} letters, try to guess it, you have {essai} tries.')
+    word_list = ['short', 'banana', 'mango', 'car', 'hamburger', 'adventure', 'bank']
+    word_chosen = random.choice(word_list)
+    guesses = 7
+    lenght = len(word_chosen)
+    display = '_' * lenght
+    letter_in = ""
+    letter_pos = 0
 
-while word_found == False or essai == 0:
-    letter = input('choose a letter: ')
+    #Communication between the user and the code
 
-    if letter in word_chosen:
-        letters.append(letter)
-        nb_letters += 1
-        print('One found')
-    elif letter == ' ' or letter == '':
-        print("Come on man, choose one letter space isn't one")
-    else:
-        essai -= 1
-        print(f'{essai} remaining')
+    print(f'Welcome {os.name}, plateform : {platform.system()}, version : {platform.release()}')
+    print(display)
+    print(f'you have {guesses} tries.')
 
-    if nb_letters == len(word_chosen) and True in [i in word_chosen for i in letters]:
-        word_found == True
+    #core functionnalities
+
+    while guesses < 6:
+        user_guesse = input('Choose a letter -> ')
+
+        if user_guesse in word_chosen and not letter_in:
+            letter_in += ',' + user_guesse
+            print('You have guessed right ! keep on going !')
+
+            for i in range(word_chosen):
+                pos = letter_in == word_chosen[i]
+                
+                return pos 
+            
+
+
+if __name__ == '__main__':
+    def main():
+        core()
+
+
         

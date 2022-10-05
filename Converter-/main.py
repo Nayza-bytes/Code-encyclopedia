@@ -32,7 +32,7 @@ Temperature conversion:             | Electrical Calculator:
 Money Conversion:                   | Math related calculation:
 
 [3] Euro to Dollar                  | [9] Degree to radians [!]
-[4] Dollar to euro                  | [10] Radians to degree [!]Not working actually
+[4] Dollar to euro                  | [10] Radians to degree [!] Not working actually
 [5] Euro To russian rubles          
 """
 
