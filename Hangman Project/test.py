@@ -4,25 +4,29 @@
 word_chosen = 'banana'
 lenght = len(word_chosen)
 display = '_' * lenght
+disp_list = list(display)
 letter_in =''
 lenght_disp = len(display)
 
 print(display)
 choose = input('letter => ')
 
-if choose in word_chosen and not letter_in:
+if choose in word_chosen :
     letter_in += choose
     print('You have guessed right ! keep on going ! \n')
 
     for i in range(lenght):
-        #pos = letter_in == word_chosen[i]
+        pos = letter_in == word_chosen[i]
         #print(pos)
 
-        if letter_in == word_chosen[i] == True:
+        if pos == True:
             letter_r = letter_in in word_chosen[i]
-            display[i] = letter_r
+            disp_list[i] = letter_in
 
-            print(display)
+
+            print(''.join(disp_list))
+        else:
+            disp_list[i] = '_'
 
             
     
