@@ -31,7 +31,7 @@ def core():
             letter_in += ',' + user_guesse
             print('You have guessed right ! keep on going !')
 
-            for i in range(word_chosen):
+            for i in range(word_chosen):  # type: ignore
                 pos = letter_in == word_chosen[i]
                 
                 return pos 
