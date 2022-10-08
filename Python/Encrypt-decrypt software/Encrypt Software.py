@@ -2,6 +2,7 @@
 
 import os, getopt
 import sys
+from typing import List, Dict
 from cryptography.fernet import Fernet
 from requests import options
 
@@ -25,28 +26,27 @@ class bc:
 
 print('')
 
+files = []
+inputfile = ''
+inputdir = ''
 
-def main(argv):
 
+def read_args() -> Dict[str, str]:
+    """Check for valid CLI arguments and return them in a dictionary"""
+    if len(sys.argv) != 3:
+        print(('Usage python "Encrypt Software.py" <-h|-i|-d|-r> ["file path" -0 if no files]'))
+        exit()
     
-    files = []
-    inputfile = ''
-    inputdir = ''
+    args_dict = {
+        "mode": sys.argv[1],
+        "file_path": sys.argv[2]
+    }
 
-    key = Fernet.generate_key()
-    with open('keys.key', 'wb') as keys:
-        keys.write(key)
+    return args_dict
 
-
-    try:
-        opts, args = getopt.getopt(argv, 'hidr')
-    except getopt.GetoptError:
-        print ('test.py --h for help')
-        sys.exit(2)
-
-    for opt, arg in opts:
-        if opt == '-h' or opt == '-help':
-            print('''
+def help_message(mode: str) -> None:
+    """Print the help menu for this project"""
+    print('''
                 Usage: python uthough.py <-h|-i|-d|-r> [file| if -i]
 
 
@@ -56,19 +56,36 @@ def main(argv):
                 -r                      Need password for this one my guy XD
             ''')
 
-        if opt == '-i' or '-input':
-            print('test')
-            inputdir = argv[1]
-            print(inputdir)
-
-            
-            with open(os.path.basename(inputdir), 'rb') as thefiles:
-                contents = thefiles.read()
 
 
-            contents_encrypted = Fernet(key).encrypt(contents)
-            with open(os.path.basename(inputdir), 'wb') as thefiles:
-                thefiles.write(contents_encrypted)
+def main() -> None:
+
+    args: Dict[str, str] = read_args()
+    
+
+    if args_dict[mode] == '-h':
+        print('Working fine')
+
+     
+
+    # key = Fernet.generate_key()
+    # with open('keys.key', 'wb') as keys:
+    #     keys.write(key)
+
+
+    # try:
+    #     opts, args = getopt.getopt(sys.argv, 'hidr')
+    # except getopt.GetoptError:
+    #     print ('test.py --h for help')
+    #     sys.exit(2)
+ 
+    #         with open(os.path.basename(inputdir), 'rb') as thefiles:
+    #             contents = thefiles.read()
+
+
+    #         contents_encrypted = Fernet(key).encrypt(contents)
+    #         with open(os.path.basename(inputdir), 'wb') as thefiles:
+    #             thefiles.write(contents_encrypted)
                 
 
     # for file in os.listdir():
@@ -95,8 +112,9 @@ def main(argv):
     #
     #
     #
-    #
+    #'''
+                
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()
