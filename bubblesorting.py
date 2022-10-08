@@ -1,13 +1,22 @@
 #Created by Nayza-bytes
 #Bubble sorting algorithm
 
-from ast import Expression
+import time
+import random
 
+list_to_sort = [random.randint(1, 100) for i in range(1000)] #This is the list that we would sort
 
-list_to_sort = [325, 78, 550, 4, 18, 76, 75, 45] #This is the list that we would sort
-
+#this decorator return the runtime of any functions taken in parameters
+def timed_func(func_to_time): #Take a function into parameter
+    def timed(*args, **kwargs):
+        start = time.perf_counter() #start a counter
+        res = func_to_time(*args, **kwargs) #execute the function takne in parameters
+        print(time.perf_counter() - start) #Subtract the end counter to the star counter and print it
+        return res
+    return timed
 
 #We're defining a function here for the algorithm
+@timed_func
 def sorting(items):
     #Going to loop over all of the items list
     for i in range(len(items)):
@@ -18,12 +27,8 @@ def sorting(items):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j] #this expression is useful to swap values
                 print(items)
-                already_sorted = False #if we sorted value, we dont escape the algo because there are maybe more value to sort
 
-            if already_sorted:
-                break
-    
     return items #We are returning the sorted list
 
 if __name__ == '__main__':
-    sorting(list_to_sort)
+    print(sorting(list_to_sort))
