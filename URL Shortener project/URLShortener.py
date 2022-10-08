@@ -1,5 +1,4 @@
 #Created by Nayza-bytes
-#Pushed on github: 02/10/2022
 
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy

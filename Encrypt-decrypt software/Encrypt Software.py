@@ -1,5 +1,4 @@
 #Created by Nayza-bytes
-#Pushed on github: 02/10/2022
 
 import os, getopt
 import sys
