@@ -26,7 +26,7 @@ def sorting(items):
             #Check if the item we're checking is greater than the next item in the list
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j] #this expression is useful to swap values
-                print(items)
+                
 
     return items #We are returning the sorted list
 
