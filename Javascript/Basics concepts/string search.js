@@ -2,6 +2,9 @@ let mySentence = 'yesterday I eat a pizza with some friends, in a park';
 let stringToConcat = 'And we met a very friendly cat'
 let str = '    Some whitespace at start !'
 
+var Name = 'Ronaldo'
+var nickname = 'sui'
+
 //The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
 console.log(mySentence.lastIndexOf('park')); // can take seconde parameter, that is where the method is going to start searching
 
@@ -29,3 +32,6 @@ console.log(mySentence.startsWith('yesterday'));
 
 //The endsWith() method returns true if a string ends with a specified value, otherwise false:
 console.log(mySentence.endsWith('park'));
+
+//Template literals
+var text = `Welcome ${nickname} your name is ${Name} `;
