@@ -9,7 +9,7 @@ The best projects added in a custom version of this repo will be **here**
 ## Task to do:
 
 - [x] Finishing the sorting algorithm in python
-- [] Finish the URL shortener project
-- [] Finish Hangman game project
-- [] Finish the encrypt/decrypt project
-- [] Start little javascript project
+- [ ] Finish the URL shortener project
+- [ ] Finish Hangman game project
+- [ ] Finish the encrypt/decrypt project
+- [ ] Start little javascript project
